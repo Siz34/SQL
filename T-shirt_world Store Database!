@@ -1,0 +1,29 @@
+CREATE TABLE tshirt_world (id INTEGER PRIMARY KEY, gender TEXT, size INTEGER, color TEXT, style TEXT, price INTEGER);
+INSERT INTO tshirt_world VALUES (1, "M", "XL", "BLACK", "Tshirt", "10.99");
+INSERT INTO tshirt_world VALUES (2, "M", "L", "BLUE", "Tank", "12.99");
+INSERT INTO tshirt_world VALUES (3, "F", "XS", "YELLOW", "Crew neck", "60.99");
+INSERT INTO tshirt_world VALUES (4, "F", "M", "RED", "Polo", "99.99");
+INSERT INTO tshirt_world VALUES (5, "M", "S", "GOLD", "V-neck", "23.99");
+INSERT INTO tshirt_world VALUES (6, "M", "XS", "GREEN", "Scoop neck", "15.99");
+INSERT INTO tshirt_world VALUES (7, "F", "XL", "PINK", "Turtle neck", "29.99");
+INSERT INTO tshirt_world VALUES (8, "F", "S", "BROWN", "Top", "9.99");
+INSERT INTO tshirt_world VALUES (9, "F", "L", "PURPLE", "Pocket T-shirt", "24.99");
+INSERT INTO tshirt_world VALUES (10, "M", "SILVER", "BLACK", "Long sleeve", "19.99");
+INSERT INTO tshirt_world VALUES (11, "M", "M", "CHROME", "Gym Tank", "7.99");
+INSERT INTO tshirt_world VALUES (12, "F", "L", "GREY", "Oversized T", "13.99");
+INSERT INTO tshirt_world VALUES (13, "F", "M", "WHITE", "Crop top", "20.99");
+INSERT INTO tshirt_world VALUES (14, "F", "XS", "ORANGE", "Basic T", "15.99");
+INSERT INTO tshirt_world VALUES (15, "M", "XXS", "OLIVE", "Short sleeved T", "18.99");
+
+SELECT * FROM tshirt_world ORDER BY price;
+SELECT * FROM tshirt_world WHERE price < 50.00 ORDER BY price;
+
+SELECT Max(size) FROM tshirt_world;
+SELECT MIN(size) FROM tshirt_world;
+
+
+
+Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in.
+You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store.
+You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+I created a store database, then displayed the database ordered by price that was less then $50.00. Also, the MAX and MIN sizes. 
