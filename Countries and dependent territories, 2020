@@ -201,3 +201,27 @@ INSERT INTO countries VALUES ('Tonga',105695,1.15,1201,147,720,-800,3.60,22.00,0
 INSERT INTO countries VALUES ('U.S. Virgin Islands',104425,-0.15,-153,298,350,-451,2.00,43.00,0);
 INSERT INTO countries VALUES ('Seychelles',98347,0.62,608,214,460,-200,2.50,34.00,0);
 INSERT INTO countries VALUES ('Antigua and Barbuda',97929,0.84,811,223,440,0,2.00,34.00,0);
+
+
+SELECT * FROM countries LIMIT 10;
+SELECT MIN(population) FROM countries; 
+SELECT MAX(population) FROM countries;
+SELECT AVG(population) FROM countries;
+SELECT name, fertility_rate FROM countries GROUP BY name, fertility_rate Having fertility_rate >= 5.2;
+SELECT name, fertility_rate FROM countries GROUP BY name, fertility_rate Having fertility_rate <= 4.0;
+
+SELECT COUNT (*) FROM countries WHERE population >= 886445;
+
+SELECT median_age, population, population_change FROM countries; 
+SELECT median_age, population, population_change, 
+CASE 
+    WHEN population >= 886445 THEN 'The population is greater then 886445'
+    WHEN population = 886445 THEN 'The population is 886445'
+    ELSE 'The population is under 886445'
+END AS "PopulationText"
+FROM countries;
+
+SELECT net_migrants, percent_of_world_pop FROM countries WHERE net_migrants < 95480 AND percent_of_world_pop < 1.0;
+
+SELECT density_per_sq_km, area_sq_km FROM countries WHERE density_per_sq_km >2200  OR area_sq_km > 10400;
+
