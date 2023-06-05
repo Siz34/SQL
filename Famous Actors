@@ -1,0 +1,34 @@
+CREATE TABLE famous_actors (
+id INTEGER PRIMARY KEY, 
+actor_id INTEGER,
+name TEXT, 
+birth_country TEXT, 
+movie TEXT);
+
+INSERT INTO famous_actors (actor_id, name, birth_country, movie)
+VALUES ("1","Jennifer Aniston", "USA", "Murder Mystery");
+INSERT INTO famous_actors (actor_id, name, birth_country, movie) VALUES ("2","Arnold Schwarzenegger", "Austria", "The Terminator");
+INSERT INTO famous_actors (actor_id, name, birth_country, movie) VALUES ("3","Adam Sandler", "USA", "Big Daddy");
+INSERT INTO famous_actors (actor_id, name, birth_country, movie) VALUES ("4","Mila Kunis", "Ukraine", "Ted");
+INSERT INTO famous_actors (actor_id, name, birth_country, movie) VALUES ("5","Lily Collins", "UK", "City of Bones");
+
+SELECT * FROM famous_actors;
+SELECT name FROM famous_actors WHERE movie="The Terminator";
+
+CREATE TABLE marrital_status(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+actor_id INTEGER,
+relationship TEXT);
+INSERT INTO marrital_status (actor_id, relationship) VALUES ("1", "Single");
+INSERT INTO marrital_status (actor_id, relationship) VALUES ("2", "Single");
+INSERT INTO marrital_status (actor_id, relationship) VALUES ("3", "Married");
+INSERT INTO marrital_status (actor_id, relationship) VALUES ("4", "Married");
+INSERT INTO marrital_status (actor_id, relationship) VALUES ("5", "Married");
+
+SELECT famous_actors.name, marrital_status.relationship
+FROM famous_actors 
+LEFT OUTER Join marrital_status
+ON famous_actors.actor_id= marrital_status.actor_id;
+
+In this project, I made my own table of “famous people and "marrital_status" and I joined those to create nice human readable 
+lists. 
